@@ -29,6 +29,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
+Plugin 'rust-lang/rust.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -67,8 +68,12 @@ set hidden
 "save more commands
 set history=100
 
-colorscheme rdark
+colorscheme industry
+if has("win32")
 set guifont="Ubuntu Mono 9"
+else
+set guifont=Ubuntu\ Mono\ 11
+endif
 
 set mouse=a
 set hlsearch
@@ -81,4 +86,7 @@ set cindent
 " for vim-airline to always appear
 set laststatus=2
 "let g:airline_powerline_fonts = 1
+
+let g:rustfmt_autosave = 1
+
 
