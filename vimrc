@@ -87,6 +87,12 @@ set cindent
 set laststatus=2
 "let g:airline_powerline_fonts = 1
 
-let g:rustfmt_autosave = 1
+"let g:rustfmt_autosave = 1
 
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+
+set autoindent
+set smartindent
 
