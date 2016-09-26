@@ -89,4 +89,5 @@ set laststatus=2
 
 let g:rustfmt_autosave = 1
 
+set visualbell
 
