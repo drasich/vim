@@ -104,5 +104,9 @@ set autoindent
 set smartindent
 
 " ycm
-let g:ycm_rust_src_path = '~/code/rust/src'
+"let g:ycm_rust_src_path = '~/code/rust/src'
+let g:ycm_rust_src_path = '/home/chris/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
+
+"nnoremap <Leader>] :YcmCompleter GoTo<CR>
+nnoremap <F12> :YcmCompleter GoTo<CR>
 
