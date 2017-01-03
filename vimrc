@@ -71,6 +71,9 @@ set history=100
 colorscheme industry
 if has("win32")
 set guifont="Ubuntu Mono 9"
+elseif has("gui_running")
+colorscheme darkspectrum
+set guifont=Ubuntu\ Mono\ 13
 else
 set guifont=Ubuntu\ Mono\ 11
 endif
@@ -94,7 +97,12 @@ set visualbell
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+"set tabstop=2
+"set smarttab
 
 set autoindent
 set smartindent
+
+" ycm
+let g:ycm_rust_src_path = '~/code/rust/src'
 
