@@ -31,6 +31,13 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
 Plugin 'rust-lang/rust.vim'
 Plugin 'vim-scripts/edc-support'
+Plugin 'Yggdroot/indentLine'
+
+"  ¦ ┆  │ 
+let g:indentLine_char = '┆'
+
+
+>>>>>>> e189225dfa20f5bd056c20ac19e5956d39eca37f
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
