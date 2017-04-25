@@ -1,10 +1,16 @@
 set nocompatible
 filetype off                  " required
 " set the runtime path to include Vundle and initialize
+if has("nvim")
+set rtp+=~/.config/nvim/bundle/Vundle.vim
+else
 set rtp+=~/.vim/bundle/Vundle.vim
+endif
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+if has("nvim")
+call vundle#begin('~/.config/nvim/bundle')
+endif
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -33,11 +39,12 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'vim-scripts/edc-support'
 Plugin 'Yggdroot/indentLine'
 
+if has("nvim")
+Plugin 'neomake/neomake'
+endif
+
 "  ¦ ┆  │ 
 let g:indentLine_char = '┆'
-
-
->>>>>>> e189225dfa20f5bd056c20ac19e5956d39eca37f
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -113,8 +120,16 @@ set smartindent
 
 " ycm
 "let g:ycm_rust_src_path = '~/code/rust/src'
-let g:ycm_rust_src_path = '/home/chris/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
+"let g:ycm_rust_src_path = '/home/chris/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
+let g:ycm_rust_src_path = '/home/chris/.rustup/toolchains/stable-i686-unknown-linux-gnu/lib/rustlib/src/rust/src'
 
 "nnoremap <Leader>] :YcmCompleter GoTo<CR>
 nnoremap <F12> :YcmCompleter GoTo<CR>
+nnoremap <F11> :YcmCompleter GetDoc<CR>
+nnoremap <F5> :!cargo run <CR>
 
+if has("nvim")
+let g:neomake_echo_current_error=1
+let g:neomake_verbose=0
+autocmd! BufWritePost *.rs Neomake cargo
+endif
