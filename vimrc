@@ -38,6 +38,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'rust-lang/rust.vim'
 Plugin 'vim-scripts/edc-support'
 Plugin 'Yggdroot/indentLine'
+Plugin 'morhetz/gruvbox'
 
 if has("nvim")
 Plugin 'neomake/neomake'
@@ -83,7 +84,9 @@ set hidden
 "save more commands
 set history=100
 
-colorscheme industry
+"colorscheme industry
+set background=dark
+colorscheme gruvbox
 if has("win32")
 set guifont="Ubuntu Mono 9"
 elseif has("gui_running")
@@ -126,7 +129,7 @@ let g:ycm_rust_src_path = '/home/chris/.rustup/toolchains/stable-i686-unknown-li
 "nnoremap <Leader>] :YcmCompleter GoTo<CR>
 nnoremap <F12> :YcmCompleter GoTo<CR>
 nnoremap <F11> :YcmCompleter GetDoc<CR>
-nnoremap <F5> :!cargo run <CR>
+nnoremap <F5> :terminal cargo run <CR>
 
 if has("nvim")
 let g:neomake_echo_current_error=1
